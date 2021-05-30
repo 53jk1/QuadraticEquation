@@ -19,3 +19,7 @@ func TestQuadraticEquationIfZeroA(t *testing.T) {
 func TestQuadraticEquationIfZeroB(t *testing.T) {
 	QuadraticEquation(1, 0, 4)
 }
+
+func TestQuadraticEquationIfZeroC(t *testing.T) {
+	QuadraticEquation(1, 3, 0)
+}

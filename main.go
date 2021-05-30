@@ -1,12 +1,33 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"math"
 )
 
+var a, b, c float64
+var check string
+
 func main() {
-	log.Fatalf("Only for testing. Check out main_test.go!")
+	Scan()
+}
+
+func Scan() {
+	fmt.Println("\nEnter a, b, c in sequence, separated by a space: ")
+	fmt.Scanln(&a, &b, &c)
+	QuadraticEquation(a, b, c)
+	Ask()
+}
+
+func Ask() {
+	fmt.Println("\nContinue?\nPress the 'Y' key if you want to continue, or any other key to exit.")
+	fmt.Scanln(&check)
+	if check == "Y" {
+		Scan()
+		fmt.Println()
+	}
+
 }
 
 func QuadraticEquation(a float64, b float64, c float64) (result [2]float64) {
@@ -53,5 +74,7 @@ func QuadraticEquation(a float64, b float64, c float64) (result [2]float64) {
 		log.Fatalf("not valid number %v", result)
 
 	}
+
+	fmt.Printf("The result: %v\n", result)
 	return result
 }

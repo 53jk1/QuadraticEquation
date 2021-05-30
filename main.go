@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"math"
 )
@@ -54,7 +53,5 @@ func QuadraticEquation(a float64, b float64, c float64) (result [2]float64) {
 		log.Fatalf("not valid number %v", result)
 
 	}
-
-	fmt.Println(result)
 	return result
 }

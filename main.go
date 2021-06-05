@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/53jk1/QuadraticEquation"
 )
 
 var a, b, c float64

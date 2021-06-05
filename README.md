@@ -1,4 +1,7 @@
 # QuadraticEquation
 ```
-go run main.go
+make run
+```
+```
+make test
 ```

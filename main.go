@@ -35,15 +35,15 @@ func QuadraticEquation(a float64, b float64, c float64) (result [2]float64) {
 	var root1, root2, imaginary, discriminant float64
 
 	if a == 0 {
-		log.Fatalf("math: a = 0")
+		log.Fatalf("math: a = %v", a)
 	}
 
 	if b == 0 {
-		log.Fatalf("math: b = 0")
+		log.Fatalf("math: b = %v", b)
 	}
 
 	if c == 0 {
-		log.Fatalf("math: c = 0")
+		log.Fatalf("math: c = %v", c)
 	}
 
 	discriminant = (b * b) - (4 * a * c)

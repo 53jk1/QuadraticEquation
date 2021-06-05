@@ -10,24 +10,32 @@ var a, b, c float64
 var check string
 
 func main() {
-	Scan()
-}
-
-func Scan() {
 	fmt.Println("\nEnter a, b, c in sequence, separated by a space: ")
 	fmt.Scanln(&a, &b, &c)
-	QuadraticEquation(a, b, c)
-	Ask()
-}
-
-func Ask() {
+	Scan(a, b, c)
 	fmt.Println("\nContinue?\nPress the 'Y' key if you want to continue, or any other key to exit.")
 	fmt.Scanln(&check)
+	Ask(check)
+}
+
+func Scan(a float64, b float64, c float64) (answer [3]float64) {
+
+	answer = [3]float64{a, b, c}
+	QuadraticEquation(a, b, c)
+	return answer
+}
+
+func Ask(check string) (checked string) {
+
+	a, b, c = 1, 2, 3
+	checked = check
 	if check == "Y" {
-		Scan()
-		fmt.Println()
+		main()
+	} else {
+		fmt.Println("Exiting...")
 	}
 
+	return checked
 }
 
 func QuadraticEquation(a float64, b float64, c float64) (result [2]float64) {
@@ -69,9 +77,6 @@ func QuadraticEquation(a float64, b float64, c float64) (result [2]float64) {
 		result2 := root2 - imaginary
 
 		result = [2]float64{result1, result2}
-
-	default:
-		log.Fatalf("not valid number %v", result)
 
 	}
 

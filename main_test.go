@@ -53,12 +53,11 @@ func TestScan(t *testing.T) {
 
 func TestAsk(t *testing.T) {
 	testCases := []struct {
-		a, b, c float64
 		checked string
 		out     string
 	}{
-		{1, 2, 3, "Y", "Y"},
-		{1, 2, 3, "X", "X"},
+		{"Y", "Y"},
+		{"X", "X"},
 	}
 	for _, tC := range testCases {
 		t.Run(tC.checked, func(t *testing.T) {

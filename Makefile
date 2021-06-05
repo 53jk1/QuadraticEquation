@@ -2,11 +2,11 @@
 SHELL := /bin/bash
 
 .PHONY: run
-run: ##@run Runs QuadraticEquation
+run: ##@run Runs QuadraticEquation.
 	go run main.go
 
 .PHONY: test
-test: ##@test Runs tests
+test: ##@test Runs tests.
 	go test -cover -v
 
 .PHONY: test-cover

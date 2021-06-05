@@ -1,23 +1,27 @@
 package main
 
 import (
+	"fmt"
 	"testing"
 )
 
-func TestQuadraticEquationIfBelowZero(t *testing.T) {
-	QuadraticEquation(1, 2, 3)
-	testCases := []struct {
-		desc string
-	}{
-		{
-			desc: "Testing if Quadric Equation is below zero",
-		},
-	}
-	for _, tC := range testCases {
-		t.Run(tC.desc, func(t *testing.T) {
-			//assert := assert.New(t)
+var testCases = []struct {
+	a, b, c float64
+	out     [2]float64
+}{
+	{1, 2, 3, [0.4 -2.4]},
+	{2, 3, 4, },
+}
 
-			//assert.Equal(t, result, "The two roots should be the same.")
+func TestQuadraticEquationIfBelowZero(t *testing.T) {
+
+	for _, tC := range testCases {
+		testname := fmt.Sprintf("%d", QuadraticEquation(a, b, c))
+		t.Run(testname, func(t *testing.T) {
+			ans := QuadraticEquation(tC.a, tC.b, tC.c)
+			if ans != tC.out {
+				t.Errorf("got %q, want %q", ans, tC.out)
+			}
 
 		})
 	}
